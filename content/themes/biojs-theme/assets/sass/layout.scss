@@ -27,6 +27,17 @@ p {
     font-size: 1.2em;
   }
 }
+a[href]{
+  color: color('pink');
+  &.btn, &.btn-large {
+    color: color('white');
+  }
+}
+.nav-wrapper {
+  a {
+    color: color('white');
+  }
+}
 .github-icon {
   &.large {
     width: 50%;
@@ -52,6 +63,19 @@ p {
     }
   }
 }
+.brand-logo {
+  position: absolute;
+  display: inline-block;
+  left: 15px;
+  top: 8px;
+}
+.main-logo-title {
+  color: color('white');
+  display: inline-block;
+  position: absolute;
+  left: 60px;
+  line-height: 1.6;
+}
 
 .tag-brandpage h1 {
   font-size: 3.2em;
@@ -59,6 +83,19 @@ p {
 .link-icon {
   position: relative;
   top: 2px;
+}
+.post-title {
+  a {
+    @include vendor('transition', color 0.2 ease-in);
+    &:hover {
+      color: color('pink');
+    }
+  }
+}
+.post-meta {
+  a {
+    color: color('pink');
+  }
 }
 @media (min-width: 768px) {
 .carousel-item.large {
@@ -69,10 +106,10 @@ p {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 20vh;
+  height: 120%;
   .gallery-content {
-    padding: 4em 0;
-    height: 30vh;
+    padding: 0;
+    height: 100%;
     width: 120%;
     
   }
@@ -96,6 +133,13 @@ p {
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
+
+  p, a{
+    line-height: 1.5;
+    &.btn, &.btn-large {
+      line-height: 2.4;
+    }
+  }
 }
   .parallax-container .section {
     width: 100%;
@@ -116,24 +160,16 @@ p {
     top: 0;
   }
 }
-
-
-/* Helpers */
-.veil {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  opacity: 0.75;
-}
-.relative {
-  position: relative;
-}
-.text-shadow {
-  text-shadow: 2px 2px 3px color('black');
-  &.light {
-    text-shadow: 2px 2px 3px color('white');
+.main-header {
+  &.news {
+    background-repeat: no-repeat;
+    background-position: right -60px;
+    background-attachment: scroll;
+    background-image: url('/assets/img/biojslogo.png');
+    @include vendor('filter', contrast(80%));
+    .container {
+      @include vendor('filter', none);
+    }
   }
 }
+
